@@ -24,9 +24,12 @@ export default class TopNav extends React.Component {
 	                    <li>
 	                        <NavLink to="/About" activeClassName="active">关于我们</NavLink>
 	                    </li>
+	                    <li>
+	                        <NavLink to="/Comment" activeClassName="active">评论</NavLink>
+	                    </li>
 	                </ul>
                 </div>
-                <div className="">
+                <div className="content">
                 	{this.props.children || <Home/>}
                 </div>
             </div>
