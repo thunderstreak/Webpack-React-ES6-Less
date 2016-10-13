@@ -56,11 +56,11 @@ export default React.createClass ({
     },
     //真实DOM更新之前
     componentWillUpdate(){
-
+    	// console.log('真实DOM更新之前')
     },
     //真实DOM更新之后
     componentDidUpdate(){
-
+    	// console.log('真实DOM更新之后')
     },
     //时间计数
     tick(){

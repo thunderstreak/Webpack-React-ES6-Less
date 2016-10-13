@@ -8,6 +8,7 @@ import Second from './components/Second';//二级导航
 import NewList from './components/NewList';//新闻列表页
 import UserCenter from './components/UserCenter';//个人中心
 import About from './components/About';//关于我们
+import Comment from './components/Comment';
 
 import './styles/base.css';
 import './styles/main.less';
@@ -21,6 +22,7 @@ render((
 			<Route path="NewList" component={NewList} />
 			<Route path="UserCenter" component={UserCenter} />
 			<Route path="About" component={About} />
+			<Route path="Comment" component={Comment} />
 			<Route path="*" component={Home}/>
 		</Route>	
 	</Router>
