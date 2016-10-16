@@ -32,6 +32,12 @@ class CommentList extends React.Component{
 		   	return(
 		  		<Comment author={comment.author} key={index}>{comment.text}</Comment>
 		   	)
+		let commentNodes=this.props.data.map(function(comment){
+	    	
+			console.log(comment)
+	    	return(
+    			<Comment author="{comment.author}">{comment.text}</Comment>
+	    	)
 		});
 		return (
 			<div className="commentList">
@@ -42,6 +48,7 @@ class CommentList extends React.Component{
 }
 
 class CommentFrom extends React.Component{
+<<<<<<< HEAD
 	constructor(){
 		super();
 		this.state={
@@ -89,12 +96,18 @@ class CommentFrom extends React.Component{
 					</select>
 					<input type="submit" value='提交' onClick={this.handleSubmit.bind(this)}/>
 				</from>
+	render(){
+		return(
+			<div className="CommentFrom">
+				<h1>CommentFrom</h1>
+				
 			</div>
 		)
 	}
 }
 
 export default class CommentBox extends React.Component{
+<<<<<<< HEAD
 	constructor(){
 		super();
 		this.state={
@@ -113,11 +126,13 @@ export default class CommentBox extends React.Component{
 		// this.loadCommentsFromServer();
 	}
 
+
 	render(){
 		return(
 			<div className="commentBox">
 				<h1>Comments</h1>
 				<CommentList data={this.state.data}></CommentList>
+				<CommentList></CommentList>
 				<CommentFrom></CommentFrom>
 			</div>
 		)
