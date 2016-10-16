@@ -1,6 +1,5 @@
 import React from 'react';
 import Img from '../images/1.png';
-import About from './About';
 
 export default React.createClass ({
 	//用于定义初始状态,这个对象可以通过this.state属性读取
@@ -37,7 +36,7 @@ export default React.createClass ({
 		 		<a {...this.state.obj}>{this.state.value}</a>
 		 		{arr}
 		 		<button onClick={this.handleClick}>点击事件({text})</button>
-		 		<About/>
+
 	 		</div>
 	 	)	
 	},

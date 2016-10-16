@@ -27,18 +27,13 @@ class Comment extends React.Component{
 class CommentList extends React.Component{
 
     render(){
-		
+		console.log(this.props.data)
 		let commentNodes=this.props.data.map(function(comment,index){
 		   	return(
 		  		<Comment author={comment.author} key={index}>{comment.text}</Comment>
 		   	)
-		let commentNodes=this.props.data.map(function(comment){
-	    	
-			console.log(comment)
-	    	return(
-    			<Comment author="{comment.author}">{comment.text}</Comment>
-	    	)
-		});
+		})
+		
 		return (
 			<div className="commentList">
 				{commentNodes}
@@ -48,12 +43,12 @@ class CommentList extends React.Component{
 }
 
 class CommentFrom extends React.Component{
-<<<<<<< HEAD
 	constructor(){
 		super();
 		this.state={
 			name:'',
 			text:'',
+			email:'',
 			selected:0
 		};
 	}
@@ -63,7 +58,7 @@ class CommentFrom extends React.Component{
 		this.setState(state);
 	}
 	handleSubmit(e){
-		console.log(this)
+		console.log(this.props)
 		return;
 		this.props.onPost({
 			name:this.state.name,
@@ -89,25 +84,22 @@ class CommentFrom extends React.Component{
 			<div className="CommentFrom">
 				<h1>CommentFrom</h1>
 				<from className="commentFrom">
-					<input placeholder="名字" value={this.state.name} onChange={this.updateField.bind(this,'name')}/>
-					<input placeholder="信息" value={this.state.text} onChange={this.updateField.bind(this,'text')} />
+					<input placeholder="名字" value={this.state.name} onChange={this.updateField.bind(this,'name')}/><br/>
+					<input placeholder="信息" value={this.state.text} onChange={this.updateField.bind(this,'text')} /><br/>
+					<input placeholder="邮箱" value={this.state.email} onChange={this.updateField.bind(this,'email')} /><br/>
 					<select value={this.state.selected} onChange={this.onSelected.bind(this)}>
 						{sel}
-					</select>
+					</select><br/>
+
 					<input type="submit" value='提交' onClick={this.handleSubmit.bind(this)}/>
 				</from>
-	render(){
-		return(
-			<div className="CommentFrom">
-				<h1>CommentFrom</h1>
-				
-			</div>
+			</div>	
 		)
-	}
+	}		
+	
 }
 
 export default class CommentBox extends React.Component{
-<<<<<<< HEAD
 	constructor(){
 		super();
 		this.state={
@@ -132,7 +124,6 @@ export default class CommentBox extends React.Component{
 			<div className="commentBox">
 				<h1>Comments</h1>
 				<CommentList data={this.state.data}></CommentList>
-				<CommentList></CommentList>
 				<CommentFrom></CommentFrom>
 			</div>
 		)
