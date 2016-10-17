@@ -14,18 +14,43 @@ class Child extends React.Component{
 		this.props.handleEmail(val);
 		this.setState({id:val})
 	}
-
+	handClick(self,i){
+		console.log(this.refs[self])
+		// console.log(i.currentTarget.parentElement)
+		let left=[];
+		let right=[];
+		
+		
+		let obj={};
+		for(let r in i){
+			obj[r]=i[r];
+		}
+		console.log(obj)
+	}
 	render(){
+		let arr = [];
+		for(let i=1;i<10;i++){
+			if(i==5){
+				arr.push(<div className="data-i" key={i} data-i={i} ref={'data_'+i} >
+					<button className="btn" data-i={i} key={'_'+i} onClick={this.handClick.bind(this,'data_'+i)}>click</button>
+				</div>)
+			}else{
+				arr.push(<div className="data-i" key={i} data-i={i} ref={'data_'+i} >{i}</div>)
+			}
+		}
+		console.log(this.refs);
 		return(
 			<div className="Child">
 				<div className="Child-ipt">
-					<input ref="emailDOM" onChange={this.handleVal.bind(this)}/>
-					{this.state.id}
+					{arr}
 				</div>
 			</div>
 		)
 	}
 }
+
+/*<input ref="emailDOM" onChange={this.handleVal.bind(this)}/>
+					{this.state.id}*/
 
 export default class Parent extends React.Component{
 	constructor(){

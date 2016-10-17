@@ -5,6 +5,9 @@
 .active{
 	color: red;
 }
+.active_two{
+	color: blue;
+}
 .TopNav{
 	
 }
@@ -41,13 +44,13 @@
 }
 .Child{
 	border: 1px blue solid;
-	height: 250px;
+	height: 450px;
 	margin: 10px;
 	position: relative;
 	/*display: table;*/
 	.Child-ipt{
 		width: 300px;
-		height:200px;
+		height:300px;
 		/*position: absolute;
 		top:50%;
 		left:50%;
@@ -72,5 +75,78 @@
 		transform:translate(-50%,-50%);
 		transform-origin:50% 50%;*/
 		background: #f1f1f1;
+		overflow: hidden;
+		.data-i{
+			width: 98px;
+			height: 98px;
+			line-height: 98px;
+			border: 1px red solid;
+			float: left;
+			text-align: center;
+			.btn{
+				height: 100%;
+				width: 100%;
+			}
+		}
 	}
+}
+
+/*摘苹果组件*/
+.appleBusket{
+    width: 400px;
+    margin: 20px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    >.title{
+        padding: 6px 0px;
+        text-align: center;
+        color: #069;
+        font-size: 20px;
+        //font-weight: 600;
+    }
+    >.stats{
+        width: 100%;
+        border-top: 1px dashed #ddd;
+        border-bottom: 1px dashed #ddd;
+        padding: 10px 0px;
+        .section{
+        	// border: 1px red solid;
+            display: inline-block;
+            width: 47.5%;
+            padding-left: 8px;
+            .head{
+                padding: 6px 0px;
+                font-size: 16px;
+                color: #069;
+            }
+            .contents{
+                font-size: 20px;
+                font-weight: 200;
+            }
+            &:first-of-type{
+                border-right: 1px solid #f0f0f0;
+            }
+        }
+    }
+    >.appleList{
+        padding: 10px 0px;
+        .empty-tip{
+            text-align: center;
+            font-size: 16px;
+            color: #ccc;
+            padding: 20px 0px;
+        }
+    }
+    >.btn-div{
+        text-align: center;
+        button{
+            color: #fff;
+            background-color: #096;
+            border: none;
+            font-size: 14px;
+            padding: 6px 40px; 
+            border-radius: 6px;
+            margin: 20px auto;
+        }
+    }
 }

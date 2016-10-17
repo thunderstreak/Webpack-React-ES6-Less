@@ -27,6 +27,15 @@ export default class TopNav extends React.Component {
 	                    <li>
 	                        <NavLink to="/Comment" activeClassName="active">评论</NavLink>
 	                    </li>
+	                    <li>
+	                        <NavLink to="/AppleBusket" activeClassName="active">苹果</NavLink>
+	                    </li>
+	                    <li>
+	                        <NavLink to="/App" activeClassName="active">计算</NavLink>
+	                    </li>
+	                    <li>
+	                        <NavLink to="/list" activeClassName="active">嵌套路由</NavLink>
+	                    </li>
 	                </ul>
                 </div>
                 <div className="content">

@@ -46,7 +46,7 @@ export default React.createClass ({
 	},
 	//真实DOM插入之后
 	componentDidMount(){
-		console.log(this)
+
 		this.interval = setInterval(this.tick, 1000);
 	},
 	//移除真实DOM
