@@ -12,13 +12,15 @@ class Child extends React.Component{
 		let val=this.refs.emailDOM.value;
 		this.state.id=val;
 		this.props.handleEmail(val);
+		this.setState({id:val})
 	}
 
 	render(){
 		return(
 			<div className="Child">
-				<div className="Child-ipt">&lt;
+				<div className="Child-ipt">
 					<input ref="emailDOM" onChange={this.handleVal.bind(this)}/>
+					{this.state.id}
 				</div>
 			</div>
 		)
@@ -34,7 +36,7 @@ export default class Parent extends React.Component{
 	}
 	handleEmail(val){
 		this.state.email=val;
-		console.log(val)
+		// this.setState({email:val})
 	}
 	handleBtn(){
 		this.setState({
