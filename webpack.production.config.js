@@ -49,8 +49,8 @@ var config = {
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
-                // loader:'url?limit=8192'
-                loader:'file-loader?name=images/[name].[hash:4].[ext]'
+                loader:'url-loader?limit=8192&name=images/[name].[has:4].[ext]'
+                // loader:'file-loader?name=images/[name].[hash:4].[ext]'
             },
             {
                 test: /\.woff$/,

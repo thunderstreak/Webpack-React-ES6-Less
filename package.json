@@ -1,7 +1,7 @@
 {
   "name": "prowebpack",
   "version": "1.0.0",
-  "description": "",
+  "description": "cmd{build:deploy,develop:dev}",
   "main": "webpack.config.js",
   "scripts": {
     "test": "webpack-dev-server --progress --profile --colors --hot",
@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base dist",
     "deploy": "set NODE_ENV=production && webpack -p --config webpack.production.config.js"
   },
-  "author": "",
+  "author": "Y",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.17.0",
