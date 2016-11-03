@@ -20,8 +20,8 @@ export default  React.createClass ({
 		 		<h1 className = "reactH1" > 新闻列表页 </h1>
 		 		<input ref="iptDOM" onChange={this.inits}/>
 		 		<img src={Img}/>
-		 		<h2>123</h2>
+		 		<h2>{this.state.init}</h2>
 	 		</div>
-	 	)	
+	 	)
 	}
 })

@@ -91,7 +91,7 @@ var config = {
               comments: false,
             },
             compress:{
-                warnings: false
+                warnings: false//压缩编译错误警告
             },
         }),
         // new webpack.HotModuleReplacementPlugin(),

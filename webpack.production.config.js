@@ -16,7 +16,7 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename:'js/[name].[hash:8].js'
+        filename:'js/[name].js'
     },
     module: {
         loaders: [
@@ -31,15 +31,26 @@ var config = {
             },
             {
                 test: /\.css$/,
-                loader: 'style!css'
+                // loader: 'style!css'
+                loader:ExtractTextPlugin.extract(
+                    'style-loader',
+                    'css-loader',
+                    {publicPath: '../'}
+                )
             },
             {
                 test: /\.less$/,
-                loader: 'style!css!less'
+                // loader: 'style!css!less'
+                loader:ExtractTextPlugin.extract(
+                    'style-loader',
+                    'css-loader!less-loader',
+                    {publicPath: '../'}
+                )
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'url?limit=8192'
+                // loader:'url?limit=8192'
+                loader:'file-loader?name=images/[name].[hash:8].[ext]'
             },
             {
                 test: /\.woff$/,
@@ -51,16 +62,24 @@ var config = {
         extensions: ['', '.js', '.jsx']
     },
     plugins: [
+        //解决react打包构建时提示使用压缩后的React development
+        new webpack.DefinePlugin({
+            'process.env':{
+                NODE_ENV:JSON.stringify("production")
+            }
+        }),
+        // webpack 压缩配置
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
             output: {
-              comments: false,
+              comments: false,//移除所有注射
             },
             compress:{
-                warnings: false
+                warnings: false//压缩编译过程中不提示警告
             },
             except: ['$','exports','require']    //排除关键字
         }),
+        // webpack 模板配置
         new HtmlWebpackPlugin({
             title: 'SPA应用',//标题名称
             // favicon:'images/favicon.ico', //favicon路径
@@ -74,6 +93,11 @@ var config = {
                 collapseWhitespace: true //删除空白符与换行符
             }
         }),
+        // webpack 提取css为单文件
+        new ExtractTextPlugin('css/[name].css',{
+            allChunks:true
+        }),
+        // webpack 提取公共模块
         new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js')
     ]
 };

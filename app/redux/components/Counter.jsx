@@ -1,4 +1,5 @@
 import React,{Component,PropTypes} from 'react';
+import bgimg from '../../images/2prksjir1.jpg';
 
 class Counter extends Component{
 	render(){
@@ -18,6 +19,7 @@ class Counter extends Component{
 				{' '}
 				<button onClick={() => incrementAsync()}>增量异步</button>
 				</p>
+				<img src={bgimg} />
 			</div>
 		)
 	}
