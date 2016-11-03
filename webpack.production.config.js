@@ -16,7 +16,7 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename:'js/[name].js'
+        filename:'js/[name].[hash:4].js'
     },
     module: {
         loaders: [
@@ -48,9 +48,9 @@ var config = {
                 )
             },
             {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|svg)$/,
                 // loader:'url?limit=8192'
-                loader:'file-loader?name=images/[name].[hash:8].[ext]'
+                loader:'file-loader?name=images/[name].[hash:4].[ext]'
             },
             {
                 test: /\.woff$/,
@@ -94,11 +94,11 @@ var config = {
             }
         }),
         // webpack 提取css为单文件
-        new ExtractTextPlugin('css/[name].css',{
+        new ExtractTextPlugin('css/[name].[hash:4].css',{
             allChunks:true
         }),
         // webpack 提取公共模块
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js')
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'js/[name].[hash:4].js')
     ]
 };
 
