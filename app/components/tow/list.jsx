@@ -14,6 +14,15 @@ class List extends React.Component{
 				</li>
 			)
 		}
+		var art=[
+			{id:1,name:'test1'},
+			{id:2,name:'test2'},
+			{id:3,name:'test3'},
+			{id:4,name:'test4'}
+		]
+		var child=(
+			art.map(i=><li key={i.id}>{i.id}</li>)
+		)
 
 		return(
 			<div>
@@ -21,7 +30,7 @@ class List extends React.Component{
 				<ul>
                     {arr}
                 </ul>
-
+				{child}
 				{this.props.children}
 			</div>
 		)
@@ -30,5 +39,3 @@ class List extends React.Component{
 
 
 export default List;
-
-
